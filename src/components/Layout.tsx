@@ -39,7 +39,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
     return (
-    <div className="h-screen flex flex-col">
+    <div className="">
          <div className="flex flex-1">
             <Sidebar items={sidebarItems} />
         <main className="flex-1 p-6 bg-background-gradient">

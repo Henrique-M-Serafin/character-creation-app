@@ -1,11 +1,10 @@
-type Race = "Elf" | "Dwarf" | "Halfling" | "Human" | "Dragonborn" | "Gnome" | "Half-Elf" | "Half-Orc" | "Tiefling";
+type Race = "" | "Elf" | "Dwarf" | "Halfling" | "Human" | "Dragonborn" | "Gnome" | "Half-Elf" | "Half-Orc" | "Tiefling";
 
-export type CharacterClass = "Fighter" | "Wizard" | "Rogue" | "Cleric" | "Ranger" | "Paladin" | "Bard" | "Druid" | "Monk" | "Warlock" | "Sorcerer" | "Barbarian" | "Artificer";
+export type CharacterClass = "" | "Fighter" | "Wizard" | "Rogue" | "Cleric" | "Ranger" | "Paladin" | "Bard" | "Druid" | "Monk" | "Warlock" | "Sorcerer" | "Barbarian" | "Artificer";
 
-type Background = "Acolyte" | "Charlatan" | "Criminal" | "Entertainer" | "Folk Hero" | "Guild Artisan" | "Hermit" | "Noble" | "Outlander" | "Sage" | "Sailor" | "Soldier" | "Urchin";
+type Background = "" | "Acolyte" | "Charlatan" | "Criminal" | "Entertainer" | "Folk Hero" | "Guild Artisan" | "Hermit" | "Noble" | "Outlander" | "Sage" | "Sailor" | "Soldier" | "Urchin";
 
 export interface Character {
-    id: string;
     name: string;
     class: CharacterClass;
     race: Race;

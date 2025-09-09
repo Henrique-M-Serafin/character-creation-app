@@ -156,7 +156,6 @@
         ],
     "characters": [
         {
-            "id": "1",
             "name": "Aragorn",
             "class": "Ranger",
             "race": "Human",
@@ -176,7 +175,6 @@
             "image": "/characterImages/Ranger.png"
         },
         {
-            "id": "2",
             "name": "Gandalf",
             "class": "Wizard",
             "race": "Elf",
@@ -196,7 +194,6 @@
             "image": "/characterImages/Wizard.png"
         },
         {
-            "id": "3",
             "name": "Legolas",
             "class": "Rogue",
             "race": "Elf",

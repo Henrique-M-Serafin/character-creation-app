@@ -21,8 +21,8 @@ export function CharacterListPage() {
     <main className="">
         {characters.length === 0 && <p>No characters available.</p>}
         <div className="flex h-full flex-wrap gap-4">
-            {characters.map((character) => (
-                <CharacterCard key={character.id} character={character} />
+            {characters.map((character, index) => (
+                <CharacterCard key={index} character={character} />
             ))}
         </div>
     </main>
