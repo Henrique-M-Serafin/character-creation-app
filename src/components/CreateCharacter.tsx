@@ -32,7 +32,6 @@ interface Props {
 
 }
 
-
 export function CreateCharacter({ character, onClose }: Props) {
 
     const [_, setCharacters] = useRecoilState(charactersState);
@@ -133,13 +132,13 @@ export function CreateCharacter({ character, onClose }: Props) {
   }
 
   return (
-    <div className=" rounded-2xl border-1 border-primary p-2 bg-card">
+    <div className=" rounded-2xl border-1 border-primary dark:border-primary p-2 bg-card dark:bg-card">
       <form onSubmit={handleSubmit}>
         <section className="flex items-center justify-between gap-2 mb-2">
           <div className="flex gap-2 items-center">
             <img src={logo} className="h-24 w-24" alt="Logo" />
             <div className="">
-              <Label htmlFor="character-name" className="mb-2">
+              <Label htmlFor="character-name" className="mb-2 dark:text-foreground">
                 Name
               </Label>
               <Input
@@ -151,14 +150,14 @@ export function CreateCharacter({ character, onClose }: Props) {
                   })
                 }
                 id="character-name"
-                className=""
+                className="dark:bg-input dark:text-foreground dark:border-border"
                 placeholder="Choose your name"
               />
             </div>
           </div>
           <div id="character-details" className="grid grid-cols-2 gap-4">
             <div className="">
-              <Label htmlFor="character-race" className="mb-2">
+              <Label htmlFor="character-race" className="mb-2 dark:text-foreground">
                 Race
               </Label>
               <Select
@@ -172,10 +171,10 @@ export function CreateCharacter({ character, onClose }: Props) {
                   });
                 }}
               >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectValue placeholder="Select a race" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectItem value="Dragonborn">Dragonborn</SelectItem>
                   <SelectItem value="Dwarf">Dwarf</SelectItem>
                   <SelectItem value="Elf">Elf</SelectItem>
@@ -189,7 +188,7 @@ export function CreateCharacter({ character, onClose }: Props) {
               </Select>
             </div>
             <div className="">
-              <Label htmlFor="character-class" className="mb-2">
+              <Label htmlFor="character-class" className="mb-2 dark:text-foreground">
                 Class
               </Label>
               <Select
@@ -210,10 +209,10 @@ export function CreateCharacter({ character, onClose }: Props) {
                   }));
                 }}
               >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectValue placeholder="Select a class" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectItem value="Artificer">Artificer</SelectItem>
                   <SelectItem value="Barbarian">Barbarian</SelectItem>
                   <SelectItem value="Bard">Bard</SelectItem>
@@ -231,7 +230,7 @@ export function CreateCharacter({ character, onClose }: Props) {
               </Select>
             </div>
             <div className="">
-              <Label htmlFor="character-background" className="mb-2">
+              <Label htmlFor="character-background" className="mb-2 dark:text-foreground">
                 Background
               </Label>
               <Select
@@ -243,10 +242,10 @@ export function CreateCharacter({ character, onClose }: Props) {
                   });
                 }}
               >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectValue placeholder="Select a background" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectItem value="Acolyte">Acolyte</SelectItem>
                   <SelectItem value="Charlatan">Charlatan</SelectItem>
                   <SelectItem value="Criminal">Criminal</SelectItem>
@@ -264,7 +263,7 @@ export function CreateCharacter({ character, onClose }: Props) {
               </Select>
             </div>
             <div className="">
-              <Label htmlFor="character-alignment" className="mb-2">
+              <Label htmlFor="character-alignment" className="mb-2 dark:text-foreground">
                 Alignment
               </Label>
               <Select
@@ -276,10 +275,10 @@ export function CreateCharacter({ character, onClose }: Props) {
                   });
                 }}
               >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectValue placeholder="Select the alignment" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="dark:bg-popover dark:text-foreground dark:border-border">
                   <SelectItem value="CE">Chaotic Evil (CE)</SelectItem>
                   <SelectItem value="CG">Chaotic Good (CG)</SelectItem>
                   <SelectItem value="CN">Chaotic Neutral (CN)</SelectItem>
@@ -296,12 +295,12 @@ export function CreateCharacter({ character, onClose }: Props) {
         </section>
         <section className="grid grid-cols-3 gap-4 mb-2">
           <div className="flex flex-col gap-2">
-            <h2 className="font-semibold mb-2">Attributes</h2>
+            <h2 className="font-semibold mb-2 dark:text-foreground">Attributes</h2>
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-str" className="font-semibold">
+              <Label htmlFor="character-str" className="font-semibold dark:text-foreground">
                 Strength (STR)
               </Label>
-              <p>{calculateModifier(formData.attributes.strength)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.strength)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.strength}
@@ -314,17 +313,17 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-str"
                 placeholder="STR"
               />
             </div>
             <Separator />
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-dex" className="font-semibold">
+              <Label htmlFor="character-dex" className="font-semibold dark:text-foreground">
                 Dexterity (DEX)
               </Label>
-              <p>{calculateModifier(formData.attributes.dexterity)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.dexterity)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.dexterity}
@@ -337,17 +336,17 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-dex"
                 placeholder="DEX"
               />
             </div>
             <Separator />
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-con" className="font-semibold">
+              <Label htmlFor="character-con" className="font-semibold dark:text-foreground">
                 Constitution (CON)
               </Label>
-              <p>{calculateModifier(formData.attributes.constitution)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.constitution)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.constitution}
@@ -360,17 +359,17 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-con"
                 placeholder="CON"
               />
             </div>
             <Separator />
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-int" className="font-semibold">
+              <Label htmlFor="character-int" className="font-semibold dark:text-foreground">
                 Intelligence (INT)
               </Label>
-              <p>{calculateModifier(formData.attributes.intelligence)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.intelligence)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.intelligence}
@@ -383,17 +382,17 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-int"
                 placeholder="INT"
               />
             </div>
             <Separator />
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-wis" className="font-semibold">
+              <Label htmlFor="character-wis" className="font-semibold dark:text-foreground">
                 Wisdom (WIS)
               </Label>
-              <p>{calculateModifier(formData.attributes.wisdom)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.wisdom)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.wisdom}
@@ -406,17 +405,17 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-wis"
                 placeholder="WIS"
               />
             </div>
             <Separator />
             <div className="flex flex-row-reverse justify-end items-center gap-2">
-              <Label htmlFor="character-cha" className="font-semibold">
+              <Label htmlFor="character-cha" className="font-semibold dark:text-foreground">
                 Charisma (CHA)
               </Label>
-              <p>{calculateModifier(formData.attributes.charisma)}</p>
+              <p className="dark:text-muted-foreground">{calculateModifier(formData.attributes.charisma)}</p>
               <NumericFormat
                 autoComplete="off"
                 value={formData.attributes.charisma}
@@ -429,7 +428,7 @@ export function CreateCharacter({ character, onClose }: Props) {
                     },
                   });
                 }}
-                className="w-14 h-14 text-center rounded-md border-primary border-1"
+                className="w-14 h-14 text-center rounded-md border-primary dark:border-primary border-1 dark:bg-input dark:text-foreground"
                 id="character-cha"
                 placeholder="CHA"
               />
@@ -438,43 +437,43 @@ export function CreateCharacter({ character, onClose }: Props) {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 justify-between items-center">
               <div>
-                <h3 className="font-semibold mb-2">CA</h3>
+                <h3 className="font-semibold mb-2 dark:text-foreground">CA</h3>
                 <Input
                   disabled={true}
-                  className="text-center w-12 h-12"
+                  className="text-center w-12 h-12 dark:bg-muted dark:text-muted-foreground"
                 ></Input>
               </div>
-              <Separator orientation="vertical" className="bg-primary" />
+              <Separator orientation="vertical" className="bg-primary dark:bg-primary" />
               <div>
-                <h3 className="font-semibold mb-2">HP</h3>
+                <h3 className="font-semibold mb-2 dark:text-foreground">HP</h3>
                 <Input
                   value={formData.HP}
                   disabled={true}
-                  className="text-center w-12 h-12"
+                  className="text-center w-12 h-12 dark:bg-muted dark:text-foreground"
                 ></Input>
               </div>
-              <Separator orientation="vertical" className="bg-primary" />
+              <Separator orientation="vertical" className="bg-primary dark:bg-primary" />
               <div>
-                <h3 className="font-semibold mb-2">Speed</h3>
+                <h3 className="font-semibold mb-2 dark:text-foreground">Speed</h3>
                 <Input
                   value={formData.speed}
                   disabled={true}
-                  className="text-center w-12 h-12"
+                  className="text-center w-12 h-12 dark:bg-muted dark:text-foreground"
                 ></Input>
               </div>
             </div>
-            <Separator orientation="horizontal" className="bg-primary" />
+            <Separator orientation="horizontal" className="bg-primary dark:bg-primary" />
             <div className="flex flex-row-reverse gap-2 justify-end items-center">
-              <Label htmlFor="proficiency">Proficiency Bonus</Label>
+              <Label htmlFor="proficiency" className="dark:text-foreground">Proficiency Bonus</Label>
               <Input
                 disabled={true}
                 placeholder="+2"
-                className="w-12 h-12 text-center"
+                className="w-12 h-12 text-center dark:bg-muted dark:text-muted-foreground"
                 id="proficiency"
               ></Input>
             </div>
             <div className="flex flex-row-reverse gap-2 justify-end items-center">
-              <Label htmlFor="perception">Passive Perception</Label>
+              <Label htmlFor="perception" className="dark:text-foreground">Passive Perception</Label>
               <Input
                 value={
                   10 +
@@ -483,13 +482,13 @@ export function CreateCharacter({ character, onClose }: Props) {
                     : 0)
                 }
                 disabled={true}
-                className="w-12 h-12 text-center"
+                className="w-12 h-12 text-center dark:bg-muted dark:text-foreground"
                 id="perception"
               ></Input>
             </div>
-            <Separator orientation="horizontal" className="bg-primary" />
+            <Separator orientation="horizontal" className="bg-primary dark:bg-primary" />
             <div className="flex flex-col h-full gap-0.5">
-              <h3 className="font-semibold mb-2">Equipment</h3>
+              <h3 className="font-semibold mb-2 dark:text-foreground">Equipment</h3>
               {CLASS_EQUIPMENT[formData.class]?.map((item, index) => (
                 <div key={index} className="">
                   {item.type === "choice" ? (
@@ -512,10 +511,10 @@ export function CreateCharacter({ character, onClose }: Props) {
                         }));
                       }}
                     >
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full dark:bg-popover dark:text-foreground dark:border-border">
                         <SelectValue placeholder="Make a choice" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="dark:bg-popover dark:text-foreground dark:border-border">
                         {item.items.map((option, idx) => (
                           <SelectItem key={idx} value={option}>
                             {option}
@@ -526,7 +525,7 @@ export function CreateCharacter({ character, onClose }: Props) {
                   ) : (
                     <div>
                       {item.items.map((option, idx) => (
-                        <div key={idx}>{option}</div>
+                        <div key={idx} className="dark:text-foreground">{option}</div>
                       ))}
                     </div>
                   )}
@@ -535,7 +534,7 @@ export function CreateCharacter({ character, onClose }: Props) {
             </div>
           </div>
           <div className="flex flex-col">
-            <h3 className="font-semibold mb-2">History</h3>
+            <h3 className="font-semibold mb-2 dark:text-foreground">History</h3>
             <Textarea
                 value={formData.backstory}
               onChange={(e) =>
@@ -544,12 +543,12 @@ export function CreateCharacter({ character, onClose }: Props) {
                   backstory: e.target.value,
                 })
               }
-              className="w-full h-full border-primary rounded-md p-2"
+              className="w-full h-full border-primary dark:border-primary rounded-md p-2 dark:bg-input dark:text-foreground"
               placeholder="Write your character's history here..."
             ></Textarea>
           </div>
         </section>
-        <Button className="w-full">{isEditing ? "Update Character" : "Create Character"}</Button>
+        <Button className="w-full dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">{isEditing ? "Update Character" : "Create Character"}</Button>
       </form>
     </div>
   );

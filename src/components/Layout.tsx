@@ -15,17 +15,6 @@ const sidebarItems = [
     path: "/character/list"
   }
 
-
-  // {
-  //   icon: <SettingsIcon />,
-  //   label: "Configurações",
-  //   path: "/settings",
-  // },
-  // {
-  //   icon: <UserIcon />,
-  //   label: "Perfil",
-  //   path: "/profile",
-  // },
 ];
 
 interface LayoutProps {
@@ -34,10 +23,10 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
     return (
-    <div className="">
+    <div className="dark:bg-background">
          <div className="flex flex-1">
             <Sidebar items={sidebarItems} />
-        <main className="flex-1 p-6 bg-background-gradient">
+        <main className="flex-1 p-6 bg-background-gradient dark:bg-background-gradient">
                 {children}
         </main>
         </div>

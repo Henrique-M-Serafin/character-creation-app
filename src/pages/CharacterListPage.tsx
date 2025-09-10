@@ -32,13 +32,13 @@ export function CharacterListPage() {
     return (
     <>
     <div className="mb-2">
-        <h1 className="font-semibold text-xl">Character List Page</h1>
-        <p className="text-muted-foreground">List of characters will be displayed here. The Images are just to ilustrate the class!</p>
+        <h1 className="font-semibold text-xl dark:text-foreground">Character List Page</h1>
+        <p className="text-muted-foreground dark:text-muted-foreground">List of characters will be displayed here. The Images are just to ilustrate the class!</p>
     </div>
     <main className="">
         {characters.length === 0 && 
             <div className="flex  w-full justify-center items-center">
-                <p>No characters available.</p>
+                <p className="dark:text-foreground">No characters available.</p>
             </div>
         }
         <div className="flex justify-center w-full h-full flex-wrap gap-4">

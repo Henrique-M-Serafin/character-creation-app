@@ -23,16 +23,16 @@ export function CharacterCard({ character, onDelete }: Props) {
         <>
         {alertDialogOpen && (
             <AlertDialog open={alertDialogOpen} onOpenChange={setAlertDialogOpen}>
-                <AlertDialogContent>
+                <AlertDialogContent className="dark:bg-card dark:text-foreground dark:border-border">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                    <AlertDialogDescription>
+                    <AlertDialogTitle className="dark:text-foreground">Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogDescription className="dark:text-muted-foreground">
                         This action cannot be undone. This will permanently delete the character from the database.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={onDelete}>Continue</AlertDialogAction>
+                    <AlertDialogCancel className="dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/80">Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={onDelete} className="dark:bg-destructive dark:text-destructive-foreground dark:hover:bg-destructive/90">Continue</AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
@@ -40,38 +40,38 @@ export function CharacterCard({ character, onDelete }: Props) {
 
         {isDialogOpen && (
             <Dialog  open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogContent className="min-w-5xl">
-                    <DialogTitle>Edit Character</DialogTitle>
-                    <DialogDescription>Change the information about your character!</DialogDescription>
+                <DialogContent className="min-w-5xl dark:bg-card dark:text-foreground dark:border-border">
+                    <DialogTitle className="dark:text-foreground">Edit Character</DialogTitle>
+                    <DialogDescription className="dark:text-muted-foreground">Change the information about your character!</DialogDescription>
                     <div className="">
                         <CreateCharacter character={character} onClose={() => setIsDialogOpen(false)} />
                     </div>
                 </DialogContent>
             </Dialog>
         )}
-        <Card className="w-fit p-4 h-full shadow-md shadow-primary">
+        <Card className="w-fit p-4 h-full shadow-md shadow-primary dark:shadow-lg dark:shadow-primary dark:bg-card dark:text-foreground dark:border-border">
             <CardHeader className="flex items-center justify-between">
-                <CardTitle className="text-xl[] font-bold">{character.name}</CardTitle>
-                <Button onClick={() => setAlertDialogOpen(true)} className=" bg-primary"><XIcon className="h-2 w-2" /></Button>
+                <CardTitle className="text-xl[] font-bold dark:text-foreground">{character.name}</CardTitle>
+                <Button onClick={() => setAlertDialogOpen(true)} className=" bg-primary dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"><XIcon className="h-2 w-2" /></Button>
             </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                    <img src={character.image} className="h-48 m-auto mb-2 border-primary border-2 rounded-md shadow-md shadow-primary" alt="Character Image" />
+                    <img src={character.image} className="h-48 m-auto mb-2 border-primary dark:border-primary border-2 rounded-md shadow-md shadow-primary dark:shadow-primary" alt="Character Image" />
                     <div className="flex gap-4 justify-between">
-                        <Label className="font-semibold text-md" htmlFor="character-class">Class</Label>
-                        <p className="py-1 px-2 bg-muted-foreground w-full text-center text-accent rounded-md" id="character-class">{character.class}</p>
+                        <Label className="font-semibold text-md dark:text-foreground" htmlFor="character-class">Class</Label>
+                        <p className="py-1 px-2 bg-muted-foreground dark:bg-muted-foreground w-full text-center text-accent dark:text-accent rounded-md" id="character-class">{character.class}</p>
                     </div>
                     <Separator className=""/>
                     <div className="flex gap-4 justify-between">
-                        <Label className="font-semibold text-md" htmlFor="character-race">Race</Label>
-                        <p className="py-1 px-2 bg-muted-foreground w-full text-center text-accent rounded-md" id="character-race">{character.race}</p>
+                        <Label className="font-semibold text-md dark:text-foreground" htmlFor="character-race">Race</Label>
+                        <p className="py-1 px-2 bg-muted-foreground dark:bg-muted-foreground w-full text-center text-accent dark:text-accent rounded-md" id="character-race">{character.race}</p>
                     </div>
                     <Separator className=""/>
-                        <Button variant="outline" className="" onClick={() => {
+                        <Button variant="outline" className="dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/80 dark:border-border" onClick={() => {
                             setIsDialogOpen(true);
                         }}>Edit Character</Button>
                         <CharacterDetails 
                             character={character}
-                            trigger={<Button variant="default" className="">View Details</Button>}
+                            trigger={<Button variant="default" className="dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">View Details</Button>}
                         />
                 </CardContent>
             </Card>

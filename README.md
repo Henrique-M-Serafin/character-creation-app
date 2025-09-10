@@ -1,75 +1,106 @@
 # Character Creation App 🎲
 
-A character creation application inspired by D&D, featuring a parchment-themed interface that evokes ancient manuscripts and scrolls.
+Aplicação de criação de personagens inspirada em D&D, com interface em tema pergaminho (claro e escuro) evocando manuscritos antigos.
 
 ## ✨ Features
 
-- **Character Creation**: Create detailed D&D-inspired characters with attributes, classes, and background stories
-- **Parchment Theme**: Beautiful UI with warm beige, sepia, and cream colors reminiscent of ancient scrolls
-- **Responsive Design**: Works seamlessly across desktop and mobile devices
-- **Modern Tech Stack**: Built with React 18, TypeScript, and Vite for optimal performance
-- **Sidebar Navigation**: Easy navigation between character creation, listing, and home
+- Criação de personagens (atributos, classe, raça, background, alinhamento, história)
+- Tema claro: tons de pergaminho (bege, creme, sépia suave)
+- Tema escuro: pergaminho noturno (tons quentes terrosos + contraste “tinta”)
+- Gradientes sutis em ambos os temas
+- Layout responsivo
+- Lista e visualização detalhada (dialog) do personagem
+- Persistência via API (json-server)
+- Alternância de tema (light/dark) com classe .dark
 
-## 🛠️ Technologies Used
+## 🛠️ Tecnologias
 
-- **React** with **TypeScript** for type-safe component development
-- **Vite** for fast build tool and development server
-- **Tailwind CSS v4** for styling with custom CSS variables
-- **React Router DOM** for client-side routing
-- **Lucide React** for beautiful icons
-- **SVGR** for SVG-as-React-component support
-- **Custom Parchment Theme** with CSS gradients and color variables
+- React + TypeScript
+- Vite
+- Tailwind CSS v4 (CSS variables + design tokens)
+- React Router DOM
+- Lucide React (ícones)
+- Recoil (estado global)
+- sonner (toasts)
+- json-server (API mock)
 
-## 🚀 Getting Started
+## 🎨 Tema (Light & Dark)
 
-### Prerequisites
+Light:
 
-Make sure you have Node.js (v16 or higher) and npm installed on your machine.
+- Fundo pergaminho claro
+- Cartões e popovers em camadas sutis
+- Primária sépia / âmbar suave
 
-### Installation & Setup
+Dark:
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/character-creation-app.git
-   cd character-creation-app
-   ```
+- Fundo “pergaminho envelhecido” profundo
+- Contraste de texto equilibrado (ink-like)
+- Highlights âmbar/mel
+- Gradiente mais forte simulando desgaste
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Tokens principais (exemplos):
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   The app will open at `http://localhost:5173`
+- --background / --foreground
+- --card / --card-foreground
+- --primary / --primary-foreground
+- --muted / --accent
+- --background-gradient (ambos os temas)
 
-4. **Start JSON-Server**
-   ```bash
-   npm run start
-   ```
-   The app will open at `http://localhost:3000`
+## 🚀 Setup
 
-## 📁 Project Structure
+Pré-requisitos:
+
+- Node.js 16+
+
+Instalação:
+
+```bash
+git clone https://github.com/your-username/character-creation-app.git
+cd character-creation-app
+npm install
+```
+
+Dev (frontend):
+
+```bash
+npm run dev
+# http://localhost:5173
+```
+
+API (json-server):
+
+```bash
+npm run start
+# http://localhost:3000
+```
+
+Build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Estrutura
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── Layout.tsx      # Main layout with sidebar
-│   ├── Sidebar.tsx     # Navigation sidebar
-│   └── CreateCharacter.tsx  # Character creation form
-├── pages/              # Page components
-├── assets/             # Static assets (icons, images)
-├── types/              # TypeScript type definitions
-└── index.css          # Global styles and CSS variables
+  components/
+  pages/
+  state/
+  lib/
+  api/
+  types/
+  index.css
 ```
 
-## 🎨 Theme
+## 🧪 Scripts
 
-The application features a custom parchment-inspired theme with:
-- Warm beige and cream backgrounds
-- Sepia accent colors
-- Smooth gradients reminiscent of aged paper
-- Dark mode support with ink-like colors
+- npm run dev
+- npm run start (json-server)
+- npm run build
+- npm run preview
+
+
 

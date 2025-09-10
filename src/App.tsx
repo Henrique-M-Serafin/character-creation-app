@@ -6,6 +6,7 @@ import { CharacterListPage } from './pages/CharacterListPage'
 import { Toaster } from "sonner"
 import { RecoilRoot } from "recoil";
 import { StrictMode } from 'react'
+import { ThemeProvider } from './components/context/ThemeProvider'
 
 function PublicLayout({ children }: { children: React.ReactNode }) {
   return <Layout>{children}</Layout>
@@ -16,31 +17,32 @@ function App() {
   return (
     <StrictMode>
       <RecoilRoot>
-        <Toaster position="bottom-right" />
-        <Router>
-          <div className="min-h-screen bg-background">
-            <Routes>
-          <Route path="/"
-            element={
-              <PublicLayout>
-                
-                <CreateCharacterPage />
-              </PublicLayout>
-            }
-          />
-          <Route path="/character/list"
-            element={
-              <PublicLayout>
-                <CharacterListPage />
-              </PublicLayout>
-            
-            } />
-        </Routes>
-      </div>
-    </Router>
-    </RecoilRoot>
-    </StrictMode>
-  )
+        <ThemeProvider>
+          <Toaster position="bottom-right" />
+          <Router>
+            <div className="min-h-screen bg-background dark:bg-background">
+              <Routes>
+            <Route path="/"
+              element={
+                <PublicLayout>
+                  <CreateCharacterPage />
+                </PublicLayout>
+              }
+            />
+            <Route path="/character/list"
+              element={
+                <PublicLayout>
+                  <CharacterListPage />
+                </PublicLayout>
+              
+              } />
+          </Routes>
+        </div>
+        </Router>
+        </ThemeProvider>
+      </RecoilRoot>
+  </StrictMode>
+) 
 }
 
 export default App
