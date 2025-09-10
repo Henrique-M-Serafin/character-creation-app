@@ -3,7 +3,9 @@ import './App.css'
 import { Layout } from './components/Layout'
 import { CreateCharacterPage } from './pages/CreateCharacterPage'
 import { CharacterListPage } from './pages/CharacterListPage'
-import { HomePage } from './pages/HomePage'
+import { Toaster } from "sonner"
+import { RecoilRoot } from "recoil";
+import { StrictMode } from 'react'
 
 function PublicLayout({ children }: { children: React.ReactNode }) {
   return <Layout>{children}</Layout>
@@ -12,19 +14,16 @@ function PublicLayout({ children }: { children: React.ReactNode }) {
 function App() {
 
   return (
-    <Router>
-      <div className="min-h-screen bg-background">
-        <Routes>
+    <StrictMode>
+      <RecoilRoot>
+        <Toaster position="bottom-right" />
+        <Router>
+          <div className="min-h-screen bg-background">
+            <Routes>
           <Route path="/"
             element={
               <PublicLayout>
-                <HomePage />
-              </PublicLayout>
-            }
-          />
-          <Route path="/character/create"
-            element={
-              <PublicLayout>
+                
                 <CreateCharacterPage />
               </PublicLayout>
             }
@@ -39,7 +38,8 @@ function App() {
         </Routes>
       </div>
     </Router>
-
+    </RecoilRoot>
+    </StrictMode>
   )
 }
 

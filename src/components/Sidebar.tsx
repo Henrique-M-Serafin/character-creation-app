@@ -37,7 +37,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const navigate = useNavigate();
   return (
-    <aside className="w-64 h-screen flex flex-col justify-between p-4 gap-2 shadow-md">
+    <aside className="w-64 min-h-screen flex flex-col justify-between p-4 gap-2 shadow-md">
     <div className="text-xl text-center flex items-center text-primary font-bold mb-4" onClick={() => navigate("/")}><img src={logo} className="h-12 w-12" alt="Logo"/>Character Creation</div>
     <Separator className="w-full" />
     <div className="flex-1">

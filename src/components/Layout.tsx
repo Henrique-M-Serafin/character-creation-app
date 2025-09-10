@@ -1,18 +1,13 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import { CastleIcon, FilesIcon, PlusIcon} from 'lucide-react';
+import { FilesIcon, PlusIcon} from 'lucide-react';
 
 const sidebarItems = [
   
   {
-    icon: <CastleIcon />,
-    label: "Home",
-    path: "/"
-  },
-  {
     icon: <PlusIcon />,
     label: "Create Character",
-    path: "/character/create",
+    path: "/",
   },
   {
     icon: <FilesIcon />,
