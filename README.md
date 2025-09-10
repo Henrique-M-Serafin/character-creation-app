@@ -12,7 +12,7 @@ A character creation application inspired by D&D, featuring a parchment-themed i
 
 ## 🛠️ Technologies Used
 
-- **React 18** with **TypeScript** for type-safe component development
+- **React** with **TypeScript** for type-safe component development
 - **Vite** for fast build tool and development server
 - **Tailwind CSS v4** for styling with custom CSS variables
 - **React Router DOM** for client-side routing
