@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const navigate = useNavigate();
   const {theme, toggleTheme} = useTheme()
   return (
-    <aside className="w-64 min-h-screen flex flex-col justify-between p-4 gap-2 shadow-md dark:shadow-lg">
+    <aside className="w-64 min-h-screen hidden lg:flex flex-col justify-between p-4 gap-2 shadow-md dark:shadow-lg">
     <div className="text-xl text-center flex items-center text-primary dark:text-primary font-bold mb-4" onClick={() => navigate("/")}><img src={logo} className="h-12 w-12" alt="Logo"/>Character Creation</div>
     <Separator className="w-full" />
     <div className="flex-1">

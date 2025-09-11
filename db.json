@@ -1,91 +1,91 @@
 {
   "classes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Fighter",
       "description": "A master of martial combat, skilled with a variety of weapons and armor.",
       "hitDice": "1d10",
       "image": "/Fighter.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rogue",
       "description": "A master of stealth and deception, skilled in the art of surprise attacks.",
       "hitDice": "1d8",
       "image": "/Rogue.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Wizard",
       "description": "A scholarly magic-user capable of manipulating the structures of reality.",
       "hitDice": "1d6",
       "image": "/Wizard.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Cleric",
       "description": "A priestly champion who wields divine magic in service of a higher power.",
       "hitDice": "1d8",
       "image": "/Cleric.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Ranger",
       "description": "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
       "hitDice": "1d10",
       "image": "/Ranger.png"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Paladin",
       "description": "A holy warrior bound to a sacred oath.",
       "hitDice": "1d10",
       "image": "/Paladin.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Bard",
       "description": "An inspiring magician whose power echoes the music of creation.",
       "hitDice": "1d8",
       "image": "/Bard.png"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Druid",
       "description": "A priest of the Old Faith, wielding the powers of nature and adopting animal forms.",
       "hitDice": "1d8",
       "image": "/Druid.png"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Monk",
       "description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
       "hitDice": "1d8",
       "image": "/Monk.png"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Warlock",
       "description": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
       "hitDice": "1d8",
       "image": "/Warlock.png"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Sorcerer",
       "description": "A spellcaster who draws on inherent magic from a gift or bloodline.",
       "hitDice": "1d6",
       "image": "/Sorcerer.png"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Barbarian",
       "description": "A fierce warrior of primitive background who can enter a battle rage.",
       "hitDice": "1d12",
       "image": "/Barbarian.png"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Artificer",
       "description": "A master of invention, combining magic and technology to create wondrous devices.",
       "hitDice": "1d8",
@@ -94,55 +94,55 @@
   ],
   "races": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Human",
       "description": "Versatile and ambitious, humans are the most adaptable and diverse",
       "speed": 30
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Elf",
       "description": "Graceful and wise, elves are known for their longevity and keen senses.",
       "speed": 30
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dwarf",
       "description": "Stout and resilient, dwarves are known for their craftsmanship and strong sense of tradition.",
       "speed": 25
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Halfling",
       "description": "Cheerful and nimble, halflings are known for their luck and resourcefulness.",
       "speed": 25
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "HalfOrc",
       "description": "Half-orcs are strong and resilient, with a mix of human and orcish traits.",
       "speed": 30
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Gnome",
       "description": "Curious and inventive, gnomes are known for their intellect and affinity for magic.",
       "speed": 25
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Tiefling",
       "description": "Mysterious and charismatic, tieflings have infernal heritage that grants them unique abilities.",
       "speed": 30
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Dragonborn",
       "description": "Proud and honorable, dragonborn are known for their draconic ancestry and breath weapon.",
       "speed": 30
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "HalfElf",
       "description": "Versatile and charismatic, half-elves combine the best traits of humans and elves.",
       "speed": 30
@@ -382,6 +382,35 @@
       "backstory": "PAULADAS",
       "image": "/characterImages/Fighter.png",
       "createdAt": "2025-09-10T22:26:30.608Z"
+    },
+    {
+      "id": "10f9",
+      "name": "Numen",
+      "class": "Ranger",
+      "race": "Elf",
+      "background": "Outlander",
+      "alignment": "TN",
+      "speed": 30,
+      "HP": 10,
+      "attributes": {
+        "strength": 12,
+        "dexterity": 15,
+        "constitution": 14,
+        "intelligence": 8,
+        "wisdom": 13,
+        "charisma": 10
+      },
+      "equipment": [
+        "Longbow",
+        "Quiver of 20 arrows",
+        "Scale mail",
+        "Two shortswords",
+        "Dungeoneer's pack"
+      ],
+      "spells": [],
+      "backstory": "RASTREAMENTOS E MONSTRUOSIDADES",
+      "image": "/characterImages/Ranger.png",
+      "createdAt": "2025-09-11T16:02:29.661Z"
     }
   ]
 }

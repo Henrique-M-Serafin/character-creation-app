@@ -133,8 +133,8 @@ export function CreateCharacter({ character, onClose }: Props) {
 
   return (
     <div className=" rounded-2xl border-1 border-primary dark:border-primary p-2 bg-card dark:bg-card">
-      <form onSubmit={handleSubmit}>
-        <section className="flex items-center justify-between gap-2 mb-2">
+      <form className="" onSubmit={handleSubmit}>
+        <section className="flex flex-col lg:flex-row items-center justify-between gap-2 mb-2">
           <div className="flex gap-2 items-center">
             <img src={logo} className="h-24 w-24" alt="Logo" />
             <div className="">
@@ -149,13 +149,14 @@ export function CreateCharacter({ character, onClose }: Props) {
                     name: e.target.value,
                   })
                 }
+                autoComplete="off"
                 id="character-name"
-                className="dark:bg-input dark:text-foreground dark:border-border"
+                className=" dark:bg-input dark:text-foreground dark:border-border"
                 placeholder="Choose your name"
               />
             </div>
           </div>
-          <div id="character-details" className="grid grid-cols-2 gap-4">
+          <div id="character-details" className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
             <div className="">
               <Label htmlFor="character-race" className="mb-2 dark:text-foreground">
                 Race
@@ -293,7 +294,7 @@ export function CreateCharacter({ character, onClose }: Props) {
             </div>
           </div>
         </section>
-        <section className="grid grid-cols-3 gap-4 mb-2">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-2">
           <div className="flex flex-col gap-2">
             <h2 className="font-semibold mb-2 dark:text-foreground">Attributes</h2>
             <div className="flex flex-row-reverse justify-end items-center gap-2">
@@ -436,14 +437,14 @@ export function CreateCharacter({ character, onClose }: Props) {
           </div>
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 justify-between items-center">
-              <div>
+              {/* <div>
                 <h3 className="font-semibold mb-2 dark:text-foreground">CA</h3>
                 <Input
                   disabled={true}
                   className="text-center w-12 h-12 dark:bg-muted dark:text-muted-foreground"
                 ></Input>
-              </div>
-              <Separator orientation="vertical" className="bg-primary dark:bg-primary" />
+              </div> */}
+              
               <div>
                 <h3 className="font-semibold mb-2 dark:text-foreground">HP</h3>
                 <Input
@@ -461,6 +462,7 @@ export function CreateCharacter({ character, onClose }: Props) {
                   className="text-center w-12 h-12 dark:bg-muted dark:text-foreground"
                 ></Input>
               </div>
+              
             </div>
             <Separator orientation="horizontal" className="bg-primary dark:bg-primary" />
             <div className="flex flex-row-reverse gap-2 justify-end items-center">
@@ -543,7 +545,7 @@ export function CreateCharacter({ character, onClose }: Props) {
                   backstory: e.target.value,
                 })
               }
-              className="w-full h-full border-primary dark:border-primary rounded-md p-2 dark:bg-input dark:text-foreground"
+              className="min-h-48 lg:w-full lg:h-full border-primary dark:border-primary rounded-md p-2 dark:bg-input dark:text-foreground"
               placeholder="Write your character's history here..."
             ></Textarea>
           </div>

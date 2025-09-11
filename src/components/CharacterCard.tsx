@@ -9,6 +9,7 @@ import { CreateCharacter } from "./CreateCharacter";
 import { useState } from "react";
 import { CharacterDetails } from "./CharacterDetails";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface Props {
   character: Character;
@@ -39,13 +40,15 @@ export function CharacterCard({ character, onDelete }: Props) {
         )}
 
         {isDialogOpen && (
-            <Dialog  open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogContent className="min-w-5xl dark:bg-card dark:text-foreground dark:border-border">
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogContent className="max-w-[95vw] max-h-[90vh] w-full lg:max-w-5xl overflow-hidden dark:bg-card dark:text-foreground dark:border-border">
                     <DialogTitle className="dark:text-foreground">Edit Character</DialogTitle>
                     <DialogDescription className="dark:text-muted-foreground">Change the information about your character!</DialogDescription>
-                    <div className="">
-                        <CreateCharacter character={character} onClose={() => setIsDialogOpen(false)} />
-                    </div>
+                    <ScrollArea className="h-[calc(90vh-120px)] w-full pr-4">
+                        <div className="p-1">
+                            <CreateCharacter character={character} onClose={() => setIsDialogOpen(false)} />
+                        </div>
+                    </ScrollArea>
                 </DialogContent>
             </Dialog>
         )}
